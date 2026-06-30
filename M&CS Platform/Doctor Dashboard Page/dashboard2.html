@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الكورسات - المنصة الذكية - كلية العلوم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="dashboard2.css" />
+<link rel="stylesheet" href="../assets/css/style.css" />
+<link rel="stylesheet" href="../assets/css/exam.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+ <header class="navbar" id="mainNav">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-icon">🎓</span>
+        <span class="brand-text">المنصة الذكية - كلية العلوم</span>
+      </div>
+      <nav class="nav-links">
+        <a class="nav-link" href="main.html">الرئيسية</a>
+        <a class="nav-link" href="advantages.html">المميزات</a>
+        <a class="nav-link active" href="dashboard.html">الأقسام</a>
+        <a class="nav-link" href="contact.html">شاركنا</a>
+      </nav>
+
+      <!-- Guest Actions -->
+      <div class="nav-actions" id="guestActions">
+        <a class="btn btn-outline" href="login/index.php">تسجيل الدخول</a>
+        <a class="btn btn-solid"   href="register/index.php">إنشاء حساب</a>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+
+      <!-- User Actions -->
+      <div class="nav-actions" id="userActions" style="display:none;">
+        <div class="nav-user-wrap">
+          <div class="nav-user-avatar" id="navUserAvatar" title="الملف الشخصي">م</div>
+          <div class="nav-user-tooltip">
+            <span class="nav-user-name"></span>
+            <span class="nav-user-role"></span>
+          </div>
+        </div>
+        <a class="nav-logout-btn" href="auth/logout.php">
+          <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+            <path d="M9 21H5C4.5 21 4 20.8 3.6 20.4C3.2 20 3 19.5 3 19V5C3 4.5 3.2 4 3.6 3.6C4 3.2 4.5 3 5 3H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          تسجيل الخروج
+        </a>
+        <button class="menu-btn" id="menuBtn2">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html"      class="mobile-link">الرئيسية</a>
+      <a href="advantages.html"   class="mobile-link">المميزات</a>
+      <a href="dashboard.html"  class="mobile-link active">الأقسام</a>
+      <a href="contact.html"    class="mobile-link">اتصل بنا</a>
+      <div class="mobile-actions">
+        <a class="btn btn-outline w-100" href="login/index.php">تسجيل الدخول</a>
+        <a class="btn btn-solid w-100"   href="register/index.php">إنشاء حساب</a>
+      </div>
+      <div class="mobile-actions">
+        <a class="btn btn-outline w-100" href="auth/logout.php">تسجيل الخروج</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== DASHBOARD LAYOUT ===================== -->
+  <div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <span>المنصه الذكيه</span>
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="#" data-panel="courses">
+          <span>الكورسات</span>
+          <i class="fa-solid fa-folder-open"></i>
+        </a>
+        <a class="sidebar-link" href="#" data-panel="schedule">
+          <span>جدول المحاضرات</span>
+          <i class="fa-solid fa-id-badge"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <span class="user-name">username</span>
+          <span class="user-role">دكتور</span>
+        </div>
+        <div class="user-avatar">UN</div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="dash-main">
+
+      <!-- ===== PANEL: الكورسات ===== -->
+      <section class="dash-panel active" id="panelCourses">
+
+        <div class="panel-header">
+          <h1>الكورسات</h1>
+        </div>
+        <hr class="panel-divider" />
+
+        <!-- Subjects bar -->
+        <div class="subjects-bar" id="subjectsBar">
+          <button class="subject-btn" data-subject="5">الماده 5</button>
+          <button class="subject-btn" data-subject="4">الماده 4</button>
+          <button class="subject-btn" data-subject="3">الماده 3</button>
+          <button class="subject-btn" data-subject="2">الماده 2</button>
+          <button class="subject-btn active" data-subject="1">الماده 1</button>
+          <button class="subject-btn add-subject-btn" id="addSubjectBtn">
+            <i class="fa-solid fa-plus"></i> اضافه ماده
+          </button>
+        </div>
+
+        <!-- Content type tabs -->
+        <div class="content-btns" id="contentBtns">
+          <button class="content-btn" data-content="exams">امتحانات</button>
+          <button class="content-btn" data-content="assignment">اسيمنت</button>
+          <button class="content-btn" data-content="lecture">المحاضرات</button>
+          <button class="content-btn active" data-content="book">الكتاب</button>
+        </div>
+
+        <!-- Upload trigger -->
+        <div class="upload-area">
+          <button class="upload-trigger-btn" id="uploadTriggerBtn">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i> رفع ملف
+          </button>
+        </div>
+
+        <!-- Files list -->
+        <div id="filesList" class="files-cards-grid"></div>
+
+      </section>
+
+      <!-- ===== PANEL: جدول المحاضرات ===== -->
+      <section class="dash-panel" id="panelSchedule">
+        <div class="panel-header">
+          <h1>جدول المحاضرات</h1>
+        </div>
+        <hr class="panel-divider" />
+        <div class="empty-state">
+          <i class="fa-solid fa-calendar-days"></i>
+          <h3>لا يوجد جدول مرفوع حالياً</h3>
+          <p>سيظهر هنا جدول المحاضرات بمجرد رفعه</p>
+        </div>
+      </section>
+        <!-- ===== PANEL: إضافة مادة ===== -->
+      <section class="dash-panel" id="panelAddSubject">
+        <div class="panel-header">
+          <h1>إضافة مادة جديدة</h1>
+        </div>
+        <hr class="panel-divider" />
+
+        <form class="subject-form-card" id="addSubjectForm" novalidate>
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="subjectName">اسم المادة <span class="req">*</span></label>
+              <input type="text" id="subjectName" class="form-control" placeholder="مثال: تحليل رياضي 2" />
+              <span class="field-error" id="err_subjectName">يرجى إدخال اسم المادة</span>
+            </div>
+
+            <div class="form-group">
+              <label for="subjectCode">كود المادة <span class="req">*</span></label>
+              <input type="text" id="subjectCode" class="form-control" placeholder="مثال: MATH201" />
+              <span class="field-error" id="err_subjectCode">يرجى إدخال كود المادة</span>
+            </div>
+
+            <div class="form-group">
+              <label for="department">القسم / الشعبة <span class="req">*</span></label>
+              <select id="department" class="form-control">
+                <option value="">اختر القسم...</option>
+                <option value="math_cs">رياضيات وعلوم الحاسب</option>
+                <option value="physics">فيزياء</option>
+                <option value="chemistry">كيمياء</option>
+                <option value="botany">نبات وميكروبيولوجي</option>
+                <option value="zoology">حيوان</option>
+                <option value="geology">جيولوجيا</option>
+              </select>
+              <span class="field-error" id="err_department">يرجى اختيار القسم</span>
+            </div>
+
+            <div class="form-group">
+              <label for="academicYear">الفرقة الدراسية <span class="req">*</span></label>
+              <select id="academicYear" class="form-control">
+                <option value="">اختر الفرقة...</option>
+                <option value="1">الفرقة الأولى</option>
+                <option value="2">الفرقة الثانية</option>
+                <option value="3">الفرقة الثالثة</option>
+                <option value="4">الفرقة الرابعة</option>
+              </select>
+              <span class="field-error" id="err_academicYear">يرجى اختيار الفرقة الدراسية</span>
+            </div>
+
+            <div class="form-group">
+              <label for="semester">الفصل الدراسي <span class="req">*</span></label>
+              <select id="semester" class="form-control">
+                <option value="">اختر الفصل...</option>
+                <option value="first">الفصل الأول</option>
+                <option value="second">الفصل الثاني</option>
+              </select>
+              <span class="field-error" id="err_semester">يرجى اختيار الفصل الدراسي</span>
+            </div>
+
+            <div class="form-group">
+              <label for="creditHours">عدد الساعات المعتمدة <span class="req">*</span></label>
+              <input type="number" id="creditHours" class="form-control" min="1" max="12" placeholder="مثال: 3" />
+              <span class="field-error" id="err_creditHours">يرجى إدخال عدد الساعات المعتمدة</span>
+            </div>
+
+            <div class="form-group full">
+              <label for="instructor">اسم المحاضر <span class="req">*</span></label>
+              <input type="text" id="instructor" class="form-control" placeholder="مثال: د. أحمد علي" />
+              <span class="field-error" id="err_instructor">يرجى إدخال اسم المحاضر</span>
+            </div>
+
+            <div class="form-group full">
+              <label for="subjectDesc">وصف المادة</label>
+              <textarea id="subjectDesc" class="form-control" placeholder="نظرة عامة مختصرة عن محتوى المادة وأهدافها..."></textarea>
+            </div>
+
+            <div class="form-group full">
+              <label>صورة المادة <span style="color:rgba(255,255,255,.45); font-weight:600;">(اختياري)</span></label>
+              <div class="image-upload-box" id="imageUploadBox">
+                <div class="image-upload-preview" id="imagePreview">
+                  <i class="fa-solid fa-image"></i>
+                </div>
+                <div class="image-upload-text">
+                  <label for="subjectImage" class="img-name" id="imageFileName" style="cursor:pointer;">اضغط لاختيار صورة من جهازك</label>
+                  <div class="img-hint">JPG, PNG — حتى 5MB</div>
+                </div>
+                <button type="button" class="image-upload-remove" id="imageRemoveBtn" style="display:none;" title="إزالة الصورة">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <input type="file" id="subjectImage" accept="image/*" hidden />
+            </div>
+
+          </div>
+
+          <div class="form-success-msg" id="formSuccessMsg">
+            <i class="fa-solid fa-circle-check"></i> تم حفظ المادة بنجاح، وأُضيفت إلى قائمة الكورسات.
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="modal-submit-btn">
+              <i class="fa-solid fa-floppy-disk"></i> حفظ المادة
+            </button>
+            <button type="button" class="modal-cancel-btn" id="cancelAddSubjectBtn">إلغاء</button>
+          </div>
+
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===================== UPLOAD MODAL ===================== -->
+  <div class="platform-modal" id="uploadModal">
+    <div class="platform-modal-box">
+      <div class="platform-modal-header">
+        <h3><i class="fa-solid fa-arrow-up-from-bracket"></i> رفع ملف جديد</h3>
+        <button class="modal-close-btn" id="modalCloseBtn">✕</button>
+      </div>
+      <form id="modalUploadForm" class="platform-modal-form">
+        <label class="modal-file-label" for="modalFileInput">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <span id="modalFileName">اضغط لاختيار ملف من جهازك</span>
+        </label>
+        <input type="file" id="modalFileInput" hidden />
+        <div class="modal-actions">
+          <button type="submit" class="modal-submit-btn">رفع الملف</button>
+          <button type="button" class="modal-cancel-btn" id="modalCancelBtn">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer class="custom-footer">
+    <div class="footer-title">
+        المنصة الذكية - كلية العلوم
+    </div>
+    <div class="footer-users" id="usersContainer">
+        <!-- Users injected by JS -->
+    </div>
+    <div class="copyright">
+        © 2026 جميع الحقوق محفوظة - المنصة الذكية - كلية العلوم - جامعة السويس
+    </div>
+</footer><script>
+    const users = [
+        "أحمد علي",
+        "حبيبة وليد",
+        "يوسف ناصر",
+        "أحمد طارق",
+        "عبدالله أبو عمرة",
+        "خلود شاهين",
+        "بسمله حسن"
+    ];
+
+    const container = document.getElementById("usersContainer");
+    users.forEach(user => {
+        const div = document.createElement("div");
+        div.className = "user-pill";
+        div.innerHTML = `<i class="bi bi-person-fill"></i> ${user}`;
+        container.appendChild(div);
+    });
+</script>
+
+  <script src="dashboard2.js"></script>
+</body>
+</html>
